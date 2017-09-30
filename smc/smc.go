@@ -11,5 +11,9 @@ func GetTemperature(key string) float64 {
 	return 0.0
 }
 
+func GetFanSpeed(key string) float64 {
+	return 0.0
+}
+
 func Close() {
 }

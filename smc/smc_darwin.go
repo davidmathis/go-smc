@@ -20,15 +20,27 @@ TN1P
 Th1H
 */
 const KEY_CPU_TEMP string = "TC0P"
+const KEY_FAN0_SPEED string = "F0Ac"
+const KEY_FAN1_SPEED string = "F1Ac"
 
 func Open() {
-	C.smc_init()
+	C.SMCOpen()
 }
 
 func GetTemperature(key string) float64 {
+	if key == "" {
+		key = KEY_CPU_TEMP
+	}
 	return float64(C.SMCGetTemperature(C.CString(key)))
 }
 
+func GetFanSpeed(key string) float64 {
+	if key == "" {
+		key = KEY_FAN0_SPEED
+	}
+	return float64(C.SMCGetFanSpeed(C.CString(key)))
+}
+
 func Close() {
-	C.smc_close()
+	C.SMCClose()
 }
