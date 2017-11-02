@@ -21,7 +21,7 @@
 #include <string.h>
 #include <IOKit/IOKitLib.h>
 
-#include "_smc.h"
+#include "smc.h"
 
 static io_connect_t conn;
 

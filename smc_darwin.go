@@ -2,7 +2,8 @@ package smc
 
 /*
 #cgo LDFLAGS: -framework IOKit
-#include "_smc.c"
+#include <IOKit/IOKitLib.h>
+#include "smc.h"
 */
 import "C"
 

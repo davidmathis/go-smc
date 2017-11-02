@@ -92,4 +92,6 @@ typedef struct {
 double SMCGetTemperature(char *key);
 kern_return_t SMCSetFanRpm(char *key, int rpm);
 int SMCGetFanRpm(char *key);
-
+kern_return_t SMCOpen(void);
+kern_return_t SMCClose();
+double SMCGetFanSpeed(char *key);
